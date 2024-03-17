@@ -1,0 +1,25 @@
+{
+	"name": "tr_se_demo",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_se_temp",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/landing/blobs/order_items",
+			"blobPathEndsWith": ".txt",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/3ac92f82-55f5-4ff8-b0c9-57b24b721ebd/resourceGroups/rg-adf-dev-eurwest-001/providers/Microsoft.Storage/storageAccounts/stadf001",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

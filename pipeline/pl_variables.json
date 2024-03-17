@@ -1,0 +1,56 @@
+{
+	"name": "pl_variables",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "vTest",
+					"value": {
+						"value": "@utcnow()",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"vTest": {
+				"type": "String"
+			},
+			"FilesList": {
+				"type": "Array"
+			},
+			"FilesListSink": {
+				"type": "Array"
+			},
+			"FileListIncremental": {
+				"type": "String"
+			},
+			"ItemToLoad": {
+				"type": "String"
+			},
+			"FilesListSource": {
+				"type": "Array"
+			},
+			"FilesListSink2": {
+				"type": "Array"
+			},
+			"loopString": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "test"
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-03-17T13:25:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

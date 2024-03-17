@@ -1,0 +1,57 @@
+{
+	"name": "df_derived",
+	"properties": {
+		"folder": {
+			"name": "tests"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_landing_orders",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_test_sink_order_items",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ORDER_ID as string,",
+				"          ORDER_DATETIME as string,",
+				"          CUSTOMER_ID as string,",
+				"          ORDER_STATUS as string,",
+				"          STORE_ID as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> source1",
+				"source1 derive(ORDER_TIMESTAMP = toTimestamp(ORDER_DATETIME, 'dd-MMM-yy HH.mm.ss.SS'),",
+				"          ORDER_DATE = toDate(ORDER_DATETIME, 'dd-MMM-yy HH.mm.ss.SS'),",
+				"          each(match(type=='string'), $$ = lower($$))) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "adf-dev-gerwestcen",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "408a0c7a-564b-42af-85a1-58a52633ccc5",
+		"tenantId": "f6f9a160-8ef3-48ec-91bb-81d14a2e53b8"
+	}
+}

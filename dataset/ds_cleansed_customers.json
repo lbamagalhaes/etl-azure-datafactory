@@ -1,0 +1,24 @@
+{
+	"name": "ds_cleansed_customers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dl_adf",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "03 Cleansed"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "customers",
+				"fileSystem": "cleansed"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

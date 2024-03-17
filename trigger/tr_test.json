@@ -1,0 +1,24 @@
+{
+	"name": "tr_test",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_execute_orders",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 25,
+				"startTime": "2024-03-16T10:59:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
