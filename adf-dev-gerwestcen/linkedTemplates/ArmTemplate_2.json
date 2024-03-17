@@ -197,29 +197,6 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"variables": {
-					"FilesList": {
-						"type": "Array"
-					},
-					"FilesListSink": {
-						"type": "Array"
-					},
-					"FileListIncremental": {
-						"type": "String"
-					},
-					"ItemToLoad": {
-						"type": "String"
-					},
-					"FilesListSource": {
-						"type": "Array"
-					},
-					"FilesListSink2": {
-						"type": "Array"
-					},
-					"loopString": {
-						"type": "String"
-					}
-				},
 				"annotations": [],
 				"lastPublishTime": "2024-03-17T13:25:58Z"
 			},
