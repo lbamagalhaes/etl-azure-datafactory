@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-dev-gerwestcen"
+		},
+		"ls_dl_adf_accountKey": {
+			"value": ""
+		},
+		"ls_st_adf_connectionString": {
+			"value": ""
+		},
+		"ls_dl_adf_properties_typeProperties_url": {
+			"value": "https://stadf002.dfs.core.windows.net/"
+		},
+		"tr_se_demo_properties_typeProperties_scope": {
+			"value": "/subscriptions/3ac92f82-55f5-4ff8-b0c9-57b24b721ebd/resourceGroups/rg-adf-dev-eurwest-001/providers/Microsoft.Storage/storageAccounts/stadf001"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
